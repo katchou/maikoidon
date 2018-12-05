@@ -10,11 +10,13 @@ import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add
 import { AddPrestationComponent } from './components/add-prestation/add-prestation.component';
 
 @NgModule({
-  declarations: [PagesPrestationsComponent, ListPrestationsComponent, PrestationComponent, PageAddPrestationComponent, AddPrestationComponent],
-  imports: [
-    CommonModule,
-    PrestationsRoutingModule,
-    SharedModule
-  ]
+  declarations: [
+    PagesPrestationsComponent,
+    ListPrestationsComponent,
+    PrestationComponent,
+    PageAddPrestationComponent,
+    AddPrestationComponent
+  ],
+  imports: [CommonModule, PrestationsRoutingModule, SharedModule]
 })
-export class PrestationsModule { }
+export class PrestationsModule {}
