@@ -4,6 +4,7 @@ import { PagesPrestationsComponent } from './pages/pages-prestations/pages-prest
 
 const appRoutes: Routes = [
   { path: '', component: PagesPrestationsComponent },
+  { path: 'add', component: PagesPrestationsComponent },
 ];
 
 

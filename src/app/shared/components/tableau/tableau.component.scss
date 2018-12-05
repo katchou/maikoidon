@@ -1,6 +1,7 @@
 @import '~src/variables';
 
-#tab .state-annule {
+#tab .state-annule,
+#tab .state-inactif {
   background: $palette-color-two
 }
 
@@ -8,15 +9,16 @@
   background: $palette-color-three
 }
 
-#tab .state-confirme {
+#tab .state-confirme,
+#tab .state-actif {
   background: $palette-color-four
 }
 
 
-.table-striped tbody > *:nth-of-type(odd) tr {
+.table-striped tbody>*:nth-of-type(odd) tr {
   background: darken($light-color, 25);
 }
 
-.table-striped tbody > * {
+.table-striped tbody>* {
   display: contents;
 }

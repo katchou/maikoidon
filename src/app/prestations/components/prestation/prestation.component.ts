@@ -23,5 +23,4 @@ export class PrestationComponent implements OnInit {
     const state = event.target.value;
     this.ps.update(this.prestation, state);
   }
-
 }

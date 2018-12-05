@@ -6,9 +6,11 @@ import { PrestationComponent } from './components/prestation/prestation.componen
 import { ListPrestationsComponent } from './containers/list-prestations/list-prestations.component';
 import { PagesPrestationsComponent } from './pages/pages-prestations/pages-prestations.component';
 import { PrestationsRoutingModule } from './prestations-routing.module';
+import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
+import { AddPrestationComponent } from './components/add-prestation/add-prestation.component';
 
 @NgModule({
-  declarations: [PagesPrestationsComponent, ListPrestationsComponent, PrestationComponent],
+  declarations: [PagesPrestationsComponent, ListPrestationsComponent, PrestationComponent, PageAddPrestationComponent, AddPrestationComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,

@@ -4,6 +4,7 @@ import { PagesClientsComponent } from './pages/pages-clients/pages-clients.compo
 
 const appRoutes: Routes = [
   { path: '', component: PagesClientsComponent },
+  { path: 'add', component: PagesClientsComponent },
 ];
 
 

@@ -1,0 +1,13 @@
+<tr>
+  <td> {{ client.numero }}</td>
+  <td> {{ client.nom }}</td>
+  <td> {{ client.mail }}</td>
+  <td appState [state]="client.state">
+    <select (change)="changeState($event)">
+      <option [value]="client.state">{{ client.state }}</option>
+      <ng-container *ngFor="let state of states">
+        <option *ngIf="client.state !== state" [value]="state">{{ state }}</option>
+      </ng-container>
+    </select>
+  </td>
+</tr>
