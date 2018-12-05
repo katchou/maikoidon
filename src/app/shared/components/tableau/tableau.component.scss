@@ -22,3 +22,8 @@
 .table-striped tbody>* {
   display: contents;
 }
+
+app-pages-prestations thead {
+  background: $dark-color;
+  color: $light-color;
+}
