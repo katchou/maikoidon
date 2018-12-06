@@ -11,14 +11,13 @@ import { environment } from '../environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-import { ContainersComponent } from './prestation/containers/containers.component';
 import { UiModule } from './ui/ui.module';
 
 
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
-  declarations: [AppComponent, ContainersComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
