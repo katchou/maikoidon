@@ -34,4 +34,8 @@ export class PrestationComponent implements OnInit {
       // gérer retour API
     });
   }
+
+  public getDetails(): void {
+    this.ps.presta$.next(this.prestation);
+  }
 }

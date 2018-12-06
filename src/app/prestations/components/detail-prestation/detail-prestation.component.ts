@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Prestation } from 'src/app/shared/models/prestation';
+import { PrestationService } from '../../services/prestation.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-detail-prestation',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailPrestationComponent implements OnInit {
 
-  constructor() { }
+  public presta$: Subject<Prestation>;
+  constructor(private ps: PrestationService) { }
 
   ngOnInit() {
+    this.presta$ = this.ps.presta$;
   }
-
 }

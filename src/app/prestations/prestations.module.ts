@@ -25,9 +25,15 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     FormPrestationComponent,
     FormReactivePrestationComponent,
     DetailPrestationComponent,
-    CommentairesPrestationComponent,
-    NgbAccordionModule
+    CommentairesPrestationComponent
   ],
-  imports: [CommonModule, PrestationsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule]
+  imports: [
+    CommonModule,
+    PrestationsRoutingModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbAccordionModule
+  ]
 })
 export class PrestationsModule {}

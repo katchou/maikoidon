@@ -1,17 +1,17 @@
-<tr>
+<tr (click)="getDetails($event)">
   <td>{{ prestation.typePresta }}</td>
   <td>{{ prestation.client }}</td>
   <td>{{ prestation.nbJours }}</td>
-  <td>{{ prestation.tjmHt | currency: 'EUR'}}</td>
-  <td>{{ prestation | total | currency: 'EUR'}}</td>
-  <td>{{ prestation | total: prestation.tauxTva | currency: 'EUR'}}</td>
+  <td>{{ prestation.tjmHt | currency: 'EUR' }}</td>
+  <td>{{ prestation | total | currency: 'EUR' }}</td>
+  <td>{{ prestation | total: prestation.tauxTva | currency: 'EUR' }}</td>
   <td appState [state]="prestation.state" >
-    <select (change)="changeState($event)">
+    <select (change)="changeState($event)" (click)="$event.stopPropagation()">
       <option [value]="prestation.state">{{ prestation.state }}</option>
       <ng-container *ngFor="let state of states">
         <option *ngIf="prestation.state !== state" [value]="state">{{ state }}</option>
       </ng-container>
     </select>
   </td>
-  <td><fa-icon [icon]="faTrashAlt" (click)="delete(prestation)"></fa-icon></td>
+  <td><fa-icon [icon]="faTrashAlt" (click)="$event.stopPropagation(); delete(prestation)"></fa-icon></td>
 </tr>
