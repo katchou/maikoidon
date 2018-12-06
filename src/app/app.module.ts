@@ -5,6 +5,7 @@ import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment.prod';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ registerLocaleData(localeFr, 'fr');
   declarations: [AppComponent, ContainersComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     LoginModule,
     UiModule,
     NgbModule.forRoot(),

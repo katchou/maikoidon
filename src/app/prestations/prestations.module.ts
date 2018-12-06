@@ -11,6 +11,9 @@ import { AddPrestationComponent } from './components/add-prestation/add-prestati
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormReactivePrestationComponent } from './components/form-reactive-prestation/form-reactive-prestation.component';
+import { DetailPrestationComponent } from './components/detail-prestation/detail-prestation.component';
+import { CommentairesPrestationComponent } from './components/commentaires-prestation/commentaires-prestation.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FormReactivePrestationComponent } from './components/form-reactive-pres
     PageAddPrestationComponent,
     AddPrestationComponent,
     FormPrestationComponent,
-    FormReactivePrestationComponent
+    FormReactivePrestationComponent,
+    DetailPrestationComponent,
+    CommentairesPrestationComponent,
+    NgbAccordionModule
   ],
   imports: [CommonModule, PrestationsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule]
 })

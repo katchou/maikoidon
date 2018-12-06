@@ -9,6 +9,8 @@ import { PageAddClientComponent } from './pages/page-add-client/page-add-client.
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { FormReactiveClientComponent } from './components/form-reactive-client/form-reactive-client.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommentairesClientComponent } from './components/commentaires-client/commentaires-client.component';
+import { DetailsClientComponent } from './components/details-client/details-client.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientComponent,
     PageAddClientComponent,
     AddClientComponent,
-    FormReactiveClientComponent
+    FormReactiveClientComponent,
+    CommentairesClientComponent,
+    DetailsClientComponent
   ],
   imports: [
     CommonModule,

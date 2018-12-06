@@ -5,7 +5,6 @@
   <td>{{ prestation.tjmHt | currency: 'EUR'}}</td>
   <td>{{ prestation | total | currency: 'EUR'}}</td>
   <td>{{ prestation | total: prestation.tauxTva | currency: 'EUR'}}</td>
-  <td></td>
   <td appState [state]="prestation.state" >
     <select (change)="changeState($event)">
       <option [value]="prestation.state">{{ prestation.state }}</option>
@@ -14,4 +13,5 @@
       </ng-container>
     </select>
   </td>
+  <td><fa-icon [icon]="faTrashAlt" (click)="delete(prestation)"></fa-icon></td>
 </tr>

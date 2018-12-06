@@ -454,7 +454,7 @@ export class HeaderComponent implements OnInit {
 
     &lt;div&gt;
       &lt;span (click)&#x3D;&quot;this.open &#x3D; !open&quot;&gt;
-        &lt;fa-icon *ngIf&#x3D;&quot;!open&quot; [icon]&#x3D;&quot;faBars&quot;&gt;&lt;/fa-icon&gt;
+          &lt;fa-icon *ngIf&#x3D;&quot;!open&quot; [icon]&#x3D;&quot;faBars&quot;&gt;&lt;/fa-icon&gt;
         &lt;fa-icon *ngIf&#x3D;&quot;open&quot; [icon]&#x3D;&quot;faTimes&quot;&gt;&lt;/fa-icon&gt;
       &lt;/span&gt;
     &lt;/div&gt;
@@ -517,7 +517,7 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="d-flex align-items-center header">    <div>      <span (click)="this.open = !open">        <fa-icon *ngIf="!open" [icon]="faBars"></fa-icon>        <fa-icon *ngIf="open" [icon]="faTimes"></fa-icon>      </span>    </div>    <div class="title flex-grow-1 text-center">      <h1>{{ title }}</h1>    </div>    <div>      <span>        <fa-icon [icon]="faUser"></fa-icon>      </span>    </div>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex align-items-center header">    <div>      <span (click)="this.open = !open">          <fa-icon *ngIf="!open" [icon]="faBars"></fa-icon>        <fa-icon *ngIf="open" [icon]="faTimes"></fa-icon>      </span>    </div>    <div class="title flex-grow-1 text-center">      <h1>{{ title }}</h1>    </div>    <div>      <span>        <fa-icon [icon]="faUser"></fa-icon>      </span>    </div>  </div></div>'
     var COMPONENTS = [{'name': 'AddClientComponent', 'selector': 'app-add-client'},{'name': 'AddPrestationComponent', 'selector': 'app-add-prestation'},{'name': 'AddRowComponent', 'selector': 'app-add-row'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClientComponent', 'selector': 'app-client'},{'name': 'ContainersComponent', 'selector': 'app-containers'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormPrestationComponent', 'selector': 'app-form-prestation'},{'name': 'FormReactiveClientComponent', 'selector': 'app-form-reactive-client'},{'name': 'FormReactivePrestationComponent', 'selector': 'app-form-reactive-prestation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListClientsComponent', 'selector': 'app-list-clients'},{'name': 'ListPrestationsComponent', 'selector': 'app-list-prestations'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddPrestationComponent', 'selector': 'app-page-add-prestation'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PagesClientsComponent', 'selector': 'app-pages-clients'},{'name': 'PagesPrestationsComponent', 'selector': 'app-pages-prestations'},{'name': 'PrestationComponent', 'selector': 'app-prestation'},{'name': 'TableauComponent', 'selector': 'app-tableau'},{'name': 'TemplateAComponent', 'selector': 'app-template-a'},{'name': 'TemplateBComponent', 'selector': 'app-template-b'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [{'name': 'StateDirective', 'selector': '[appState]'}];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};

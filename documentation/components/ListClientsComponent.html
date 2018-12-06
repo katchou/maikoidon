@@ -131,7 +131,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#collection">collection</a>
+                                <a href="#collection$">collection$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -175,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -244,7 +244,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -271,31 +271,31 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="collection"></a>
+                        <a name="collection$"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            collection
+                            collection$
                             </b>
-                            <a href="#collection"><span class="icon ion-ios-link"></span></a>
+                            <a href="#collection$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>collection:     <code><a href="../classes/Client.html" target="_self" >Client[]</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>collection$:     <code><a href="../classes/Client.html" target="_self" >Observable&lt;Client[]&gt;</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Client.html" target="_self" >Client[]</a></code>
+                            <i>Type : </i>    <code><a href="../classes/Client.html" target="_self" >Observable&lt;Client[]&gt;</a></code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -330,7 +330,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/clients/containers/list-clients/list-clients.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -344,6 +344,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 import { Client } from &#x27;src/app/shared/models/client&#x27;;
 import { ClientService } from &#x27;../../services/client.service&#x27;;
 
@@ -353,14 +354,14 @@ import { ClientService } from &#x27;../../services/client.service&#x27;;
   styleUrls: [&#x27;./list-clients.component.scss&#x27;]
 })
 export class ListClientsComponent implements OnInit {
-  public collection: Client[];
+  public collection$: Observable&lt;Client[]&gt;;
   public headers: string[];
 
   constructor(private cs: ClientService) {}
 
   ngOnInit() {
-    this.collection &#x3D; this.cs.collection;
-    this.headers &#x3D; [&#x27;Numero&#x27;, &#x27;Nom&#x27;, &#x27;Mail&#x27;, &#x27;State&#x27;];
+    this.collection$ &#x3D; this.cs.collection$;
+    this.headers &#x3D; [&#x27;Numero&#x27;, &#x27;Nom&#x27;, &#x27;Mail&#x27;, &#x27;State&#x27;, &#x27;Supprimer&#x27;];
   }
 }
 </code></pre>
@@ -368,7 +369,7 @@ export class ListClientsComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-tableau [headers]&#x3D;&quot;headers&quot;&gt;
-    &lt;app-client *ngFor&#x3D;&quot;let item of collection&quot; [client]&#x3D;&quot;item&quot; scope&#x3D;&quot;row&quot;&gt;&lt;/app-client&gt;
+  &lt;app-client *ngFor&#x3D;&quot;let item of collection$ | async&quot; [client]&#x3D;&quot;item&quot; scope&#x3D;&quot;row&quot;&gt;&lt;/app-client&gt;
 &lt;/app-tableau&gt;
 &lt;app-add-row label&#x3D;&quot;un client&quot;&gt;&lt;/app-add-row&gt;
 </code></pre>
@@ -406,7 +407,7 @@ export class ListClientsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-tableau [headers]="headers">    <app-client *ngFor="let item of collection" [client]="item" scope="row"></app-client></app-tableau><app-add-row label="un client"></app-add-row></div>'
+        var COMPONENT_TEMPLATE = '<div><app-tableau [headers]="headers">  <app-client *ngFor="let item of collection$ | async" [client]="item" scope="row"></app-client></app-tableau><app-add-row label="un client"></app-add-row></div>'
     var COMPONENTS = [{'name': 'AddClientComponent', 'selector': 'app-add-client'},{'name': 'AddPrestationComponent', 'selector': 'app-add-prestation'},{'name': 'AddRowComponent', 'selector': 'app-add-row'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClientComponent', 'selector': 'app-client'},{'name': 'ContainersComponent', 'selector': 'app-containers'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormPrestationComponent', 'selector': 'app-form-prestation'},{'name': 'FormReactiveClientComponent', 'selector': 'app-form-reactive-client'},{'name': 'FormReactivePrestationComponent', 'selector': 'app-form-reactive-prestation'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListClientsComponent', 'selector': 'app-list-clients'},{'name': 'ListPrestationsComponent', 'selector': 'app-list-prestations'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'PageAddClientComponent', 'selector': 'app-page-add-client'},{'name': 'PageAddPrestationComponent', 'selector': 'app-page-add-prestation'},{'name': 'PageLoginComponent', 'selector': 'app-page-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PagesClientsComponent', 'selector': 'app-pages-clients'},{'name': 'PagesPrestationsComponent', 'selector': 'app-pages-prestations'},{'name': 'PrestationComponent', 'selector': 'app-prestation'},{'name': 'TableauComponent', 'selector': 'app-tableau'},{'name': 'TemplateAComponent', 'selector': 'app-template-a'},{'name': 'TemplateBComponent', 'selector': 'app-template-b'},{'name': 'UiComponent', 'selector': 'app-ui'}];
     var DIRECTIVES = [{'name': 'StateDirective', 'selector': '[appState]'}];
     var ACTUAL_COMPONENT = {'name': 'ListClientsComponent'};

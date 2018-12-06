@@ -366,8 +366,9 @@ export class AddPrestationComponent implements OnInit {
   }
 
   add(item: Prestation): void {
-    this.ps.add(item);
-    this.router.navigate([&#x27;../&#x27;, {relativeTo: this.ar}]);
+    this.ps.add(item).then(data &#x3D;&gt; /* traitement réponse API */{
+      this.router.navigate([&#x27;../&#x27;], {relativeTo: this.ar});
+    });
   }
 
 }

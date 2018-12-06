@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { States } from 'src/app/shared/enums/state.enum';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,13 @@ export class PrestationService {
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   private _collection$: Observable<Prestation[]>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private http: HttpClient) {
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection$ = this.itemsCollection
       .valueChanges()
       .pipe(map(data => data.map(doc => new Prestation(doc))));
+
+    // this.collection$ = this.http.get(`${URL_API}/prestation`).pipe(map(data => data.map(doc => new Prestation(doc))));
   }
 
   public get collection$(): Observable<Prestation[]> {

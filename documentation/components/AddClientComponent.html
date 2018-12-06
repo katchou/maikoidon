@@ -366,8 +366,7 @@ export class AddClientComponent implements OnInit {
   }
 
   add(item: Client): void {
-    this.cs.add(item);
-    this.router.navigate([&#x27;../&#x27;, {relativeTo: this.ar}]);
+    this.cs.add(item).then(() &#x3D;&gt; this.router.navigate([&#x27;../&#x27;], {relativeTo: this.ar}));
   }
 
 }

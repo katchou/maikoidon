@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { PrestationService } from '../../services/prestation.service';
 import { Subscription, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { MenuItemI } from 'src/app/shared/interfaces/menu-item-i';
 
 @Component({
   selector: 'app-list-prestations',
@@ -9,18 +11,16 @@ import { Subscription, Observable } from 'rxjs';
   styleUrls: ['./list-prestations.component.scss']
 })
 export class ListPrestationsComponent implements OnInit, OnDestroy {
-
   public collection$: Observable<Prestation[]>;
   public headers: string[];
-  private sub: Subscription;
+  public menuItems: MenuItemI[];
+  // private sub: Subscription;
 
-  constructor(
-    private ps: PrestationService
-  ) { }
+  constructor(private ps: PrestationService) {}
 
   ngOnInit() {
     this.collection$ = this.ps.collection$;
-      this.headers = [
+    this.headers = [
       'Type',
       'Client',
       'Nb Jours',
@@ -29,6 +29,10 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
       'Total TTC',
       'State',
       'Supprimer'
+    ];
+    this.menuItems = [
+      { route: 'details', label: 'Détails' },
+      { route: 'commentaires', label: 'Commentaire' }
     ];
   }
   ngOnDestroy(): void {

@@ -20,7 +20,16 @@ export class AddPrestationComponent implements OnInit {
   }
 
   add(item: Prestation): void {
-    this.ps.add(item).then(data => /* traitement réponse API */this.router.navigate(['../', {relativeTo: this.ar}]));
+    this.ps.add(item).then(data => /* traitement réponse API */{
+      this.router.navigate(['../'], {relativeTo: this.ar});
+    });
+
+    // si on appelait une API, il faudrait faire ça
+    // this.ps.add(item).subscribe(data => /* traitement réponse API */{
+    //   this.router.navigate(['../'], {relativeTo: this.ar});
+    // });
+
+    // et ne pas oublier le unsubcribe
   }
 
 }

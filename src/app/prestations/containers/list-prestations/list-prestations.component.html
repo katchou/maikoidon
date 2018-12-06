@@ -2,3 +2,5 @@
   <app-prestation *ngFor="let item of collection$ | async" [prestation]="item" scope="row"></app-prestation>
 </app-tableau>
 <app-add-row label="une prestation"></app-add-row>
+<app-sub-menu [menuItems]="menuItems"></app-sub-menu>
+<router-outlet></router-outlet>

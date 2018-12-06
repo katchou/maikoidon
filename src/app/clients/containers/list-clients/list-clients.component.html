@@ -1,4 +1,7 @@
 <app-tableau [headers]="headers">
-    <app-client *ngFor="let item of collection" [client]="item" scope="row"></app-client>
+  <app-client *ngFor="let item of collection$ | async" [client]="item" scope="row"></app-client>
 </app-tableau>
 <app-add-row label="un client"></app-add-row>
+<app-sub-menu [menuItems]="menuItems"></app-sub-menu>
+<router-outlet></router-outlet>
+
