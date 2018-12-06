@@ -29,7 +29,8 @@ export class FormReactivePrestationComponent implements OnInit {
       nbJours: [this.init.nbJours],
       tjmHt: [this.init.tjmHt],
       tauxTva: [this.init.tauxTva],
-      state: [this.init.state]
+      state: [this.init.state],
+      commentaires: [this.init.commentaires]
     });
   }
   isError(nfc: string): boolean {

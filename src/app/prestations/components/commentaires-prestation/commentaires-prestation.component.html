@@ -1,3 +1,6 @@
-<p>
-  commentaires-prestation works!
-</p>
+<form *ngIf="presta$ | async as presta">
+  <div class="form-group">
+    <label for="commentaires">Commentaires</label>
+    <textarea formControlName="commentaires" class="form-control" id="commentaires" rows="3">{{ presta.commentaires }}</textarea>
+  </div>
+</form>
