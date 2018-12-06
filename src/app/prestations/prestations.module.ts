@@ -8,6 +8,9 @@ import { PagesPrestationsComponent } from './pages/pages-prestations/pages-prest
 import { PrestationsRoutingModule } from './prestations-routing.module';
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { AddPrestationComponent } from './components/add-prestation/add-prestation.component';
+import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormReactivePrestationComponent } from './components/form-reactive-prestation/form-reactive-prestation.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +18,10 @@ import { AddPrestationComponent } from './components/add-prestation/add-prestati
     ListPrestationsComponent,
     PrestationComponent,
     PageAddPrestationComponent,
-    AddPrestationComponent
+    AddPrestationComponent,
+    FormPrestationComponent,
+    FormReactivePrestationComponent
   ],
-  imports: [CommonModule, PrestationsRoutingModule, SharedModule]
+  imports: [CommonModule, PrestationsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule]
 })
 export class PrestationsModule {}

@@ -21,6 +21,9 @@ export class PrestationComponent implements OnInit {
 
   changeState(event) {
     const state = event.target.value;
-    this.ps.update(this.prestation, state);
+    this.ps.update(this.prestation, state).then((data) => {
+      // gérer le retour API
+      this.prestation.state = state;
+    });
   }
 }

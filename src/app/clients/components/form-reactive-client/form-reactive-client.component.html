@@ -1,0 +1,25 @@
+<div class="container">
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="type">Nom</label>
+        <input formControlName="nom" type="text" class="form-control" id="nom">
+        <div class="alert alert-danger" *ngIf="isError('nom')">Champs invalides</div>
+      </div>
+      <div class="form-group">
+        <label for="mail">Mail</label>
+        <input formControlName="mail" type="text" class="form-control" id="mail">
+        <div class="alert alert-danger" *ngIf="isError('mail')">Champs invalides</div>
+      </div>
+      <div class="form-group">
+        <label for="numero">Numéro</label>
+        <input formControlName="numero" type="number" class="form-control" id="numero">
+      </div>
+      <div class="form-group">
+        <label for="state">state</label>
+        <select formControlName="state" class="form-control" id="state">
+          <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+        </select>
+      </div>
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
